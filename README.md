@@ -13,7 +13,7 @@ e-commerce KebutuhanKU adalah sebuah platform e-commerce yang dirancang untuk me
 ## Teknologi yang Digunakan
 
 - **Frontend**: Vue.js, PrimeVue, Tailwind CSS
-- **Backend**: (Belum ditentukan, bisa menggunakan Node.js, Fastapi, atau teknologi lainnya)
+- **Backend**: Node.js, Fastapi
 - **Database**: (Belum ditentukan, bisa menggunakan MongoDB, MySQL, atau database lainnya)
 
 ## Kontribusi

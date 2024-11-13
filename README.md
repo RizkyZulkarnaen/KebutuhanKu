@@ -1,4 +1,4 @@
-# e-commerce KebutuhanKU
+# e-commerce KebutuhanKU (Proses)
 
 e-commerce KebutuhanKU adalah sebuah platform e-commerce yang dirancang untuk memenuhi berbagai kebutuhan pengguna. Proyek ini dibangun menggunakan Vue.js untuk frontend dan PrimeVue untuk komponen UI.
 

@@ -3,14 +3,17 @@ import App from './App.vue';
 import router from './router';
 import './index.css';
 import PrimeVue from 'primevue/config';
-import Lara from '@primevue/themes/lara';
+import Material from '@primevue/themes/material';
 import 'primeicons/primeicons.css';
 
 const app = createApp(App);
 app.use(router);
 app.use(PrimeVue,{
     theme: {
-        preset: Lara
+        preset: Material,
+        options: {
+            darkModelSelector: 'sytem',
+        }
     }
 });
 app.mount('#app');

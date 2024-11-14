@@ -1,22 +1,24 @@
 <template>
-  <nav>
+  <nav class="mb-10">
     <div class="card">
         <Menubar class="!border-none !rounded-none">
             <template #start>
-              <div>
+              <RouterLink :to="{name: 'home'}">
                 <a class="inline-flex items-center gap-x-1 text-xl font-semibold dark:text-white focus:outline-none focus:opacity-80" href="#" aria-label="Brand">
                   <img class="w-10 h-auto" src="./assets/logo.png" alt="Logo">
                   <span class="font-semibold text-2xl dark:text-white lg:block md:block hidden">
                     KebutuhanKu
                   </span>
                 </a>
-              </div>
+              </RouterLink>
             </template>
             <template #end>
               <div class="inline-flex items-center gap-2">
                   <searchcomponent/>
-                  <Button label="Account" variant="outlined" icon="pi pi-user" class="!items-baseline"/>
-                  <Button label="Cart" icon="pi pi-shopping-cart" variant="outlined" aria-label="Filter" class="!items-baseline"/>
+                  <Button label="Account" variant="text" icon="pi pi-user" class="!items-baseline"/>
+                  <RouterLink to="" class="!items-baseline">
+                    <Button label="Cart" icon="pi pi-shopping-cart" variant="text" aria-label="Filter" class="!items-baseline"/>
+                  </RouterLink>
                 </div>
             </template>
         </Menubar>

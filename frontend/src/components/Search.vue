@@ -1,20 +1,22 @@
 <template>
-    <div class="flex items-center">
-        <InputText v-model="searchQuery" placeholder="Search..." class="w-full p-inputtext-sm p-component" />
-        <Button icon="pi pi-search" @click="onSearch" class="ml-2 p-button-sm" />
-    </div>
+    <IconField>
+        <InputText class="!rounded-full !h-10 !w-60" v-model="value1" placeholder="Search" />
+        <InputIcon class="pi pi-search" />
+    </IconField>
 </template>
 
 <script>
 import { ref } from 'vue';
 import InputText from 'primevue/inputtext';
-import Button from 'primevue/button';
+import IconField from 'primevue/iconfield';
+import InputIcon from 'primevue/inputicon';
 
 export default {
 name: 'SearchComponent',
 components: {
     InputText,
-    Button
+    IconField,
+    InputIcon
 },
 setup() {
     const searchQuery = ref('');

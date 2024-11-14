@@ -1,36 +1,28 @@
 <template>
   <nav>
     <div class="card">
-        <Menubar :model="items" class="!border-none">
+        <Menubar class="!border-none !rounded-none">
             <template #start>
-              <div class="flex items-center justify-between">
-                <a class="flex-none text-xl font-semibold dark:text-white focus:outline-none focus:opacity-80" href="#" aria-label="Brand">
-                  <span class="inline-flex items-center gap-x-2 text-xl font-semibold dark:text-white">
-                    <img class="w-10 h-auto" src="./assets/logo.png" alt="Logo">
+              <div>
+                <a class="inline-flex items-center gap-x-1 text-xl font-semibold dark:text-white focus:outline-none focus:opacity-80" href="#" aria-label="Brand">
+                  <img class="w-10 h-auto" src="./assets/logo.png" alt="Logo">
+                  <span class="font-semibold text-2xl dark:text-white lg:block md:block hidden">
                     KebutuhanKu
                   </span>
                 </a>
-                <div class="sm:hidden">
-                  <button type="button" class="hs-collapse-toggle relative size-7 flex justify-center items-center gap-x-2 rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-transparent dark:border-neutral-700 dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10" id="hs-navbar-example-collapse" aria-expanded="false" aria-controls="hs-navbar-example" aria-label="Toggle navigation" data-hs-collapse="#hs-navbar-example">
-                    <svg class="hs-collapse-open:hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" x2="21" y1="6" y2="6"/><line x1="3" x2="21" y1="12" y2="12"/><line x1="3" x2="21" y1="18" y2="18"/></svg>
-                    <svg class="hs-collapse-open:block hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-                    <span class="sr-only">Toggle navigation</span>
-                  </button>
-                </div>
               </div>
             </template>
-            <template #item>
-                
-            </template>
             <template #end>
-                <div class="inline-flex items-center gap-2">
-                  <Button class="!bg-blue-200 !border-none" label="Sign-up" icon="pi pi-user-plus"/>
-                  <Button label="Login" icon="pi pi-sign-in" />
+              <div class="inline-flex items-center gap-2">
+                  <searchcomponent/>
+                  <Button label="Account" variant="outlined" icon="pi pi-user" class="!items-baseline"/>
+                  <Button label="Cart" icon="pi pi-shopping-cart" variant="outlined" aria-label="Filter" class="!items-baseline"/>
                 </div>
             </template>
         </Menubar>
-    </div>
-  </nav>
+        <MegaMenu :model="items" class="!border-none !rounded-none !py-0 px-2 !text-start !md:block"/>
+      </div>
+    </nav>
   <router-view/>
 </template>
 
@@ -42,41 +34,114 @@
   text-align: center;
   color: #2c3e50;
 }
+
+@media (max-width: 768px) {
+  .p-megamenu {
+    display: none !important;
+  }
+}
 </style>
 
 <script setup>
 import { ref } from "vue";
 import Menubar from 'primevue/menubar';
+import MegaMenu from 'primevue/megamenu';
 import Button from 'primevue/button';
+import searchcomponent from './components/Search.vue';
 
 const items = ref([
     {
-        label: 'Home',
-        icon: 'pi pi-home'
+        label: 'Furniture',
+        icon: 'pi pi-box',
+        items: [
+            [
+                {
+                    label: 'Living Room',
+                    items: [{ label: 'Accessories' }, { label: 'Armchair' }, { label: 'Coffee Table' }, { label: 'Couch' }, { label: 'TV Stand' }],
+                }
+            ],
+            [
+                {
+                    label: 'Kitchen',
+                    items: [{ label: 'Bar stool' }, { label: 'Chair' }, { label: 'Table' }]
+                },
+                {
+                    label: 'Bathroom',
+                    items: [{ label: 'Accessories' }]
+                }
+            ],
+            [
+                {
+                    label: 'Bedroom',
+                    items: [{ label: 'Bed' }, { label: 'Chaise lounge' }, { label: 'Cupboard' }, { label: 'Dresser' }, { label: 'Wardrobe' }]
+                }
+            ],
+            [
+                {
+                    label: 'Office',
+                    items: [{ label: 'Bookcase' }, { label: 'Cabinet' }, { label: 'Chair' }, { label: 'Desk' }, { label: 'Executive Chair' }]
+                }
+            ]
+        ]
     },
     {
-        label: 'Projects',
-        icon: 'pi pi-search',
-        badge: 3,
+        label: 'Electronics',
+        icon: 'pi pi-mobile',
         items: [
-            {
-                label: 'Core',
-                icon: 'pi pi-bolt',
-                shortcut: '⌘+S'
-            },
-            {
-                label: 'Blocks',
-                icon: 'pi pi-server',
-                shortcut: '⌘+B'
-            },
-            {
-                separator: true
-            },
-            {
-                label: 'UI Kit',
-                icon: 'pi pi-pencil',
-                shortcut: '⌘+U'
-            }
+            [
+                {
+                    label: 'Computer',
+                    items: [{ label: 'Monitor' }, { label: 'Mouse' }, { label: 'Notebook' }, { label: 'Keyboard' }, { label: 'Printer' }, { label: 'Storage' }]
+                }
+            ],
+            [
+                {
+                    label: 'Home Theater',
+                    items: [{ label: 'Projector' }, { label: 'Speakers' }, { label: 'TVs' }]
+                }
+            ],
+            [
+                {
+                    label: 'Gaming',
+                    items: [{ label: 'Accessories' }, { label: 'Console' }, { label: 'PC' }, { label: 'Video Games' }]
+                }
+            ],
+            [
+                {
+                    label: 'Appliances',
+                    items: [{ label: 'Coffee Machine' }, { label: 'Fridge' }, { label: 'Oven' }, { label: 'Vaccum Cleaner' }, { label: 'Washing Machine' }]
+                }
+            ]
+        ]
+    },
+    {
+        label: 'Sports',
+        icon: 'pi pi-clock',
+        items: [
+            [
+                {
+                    label: 'Football',
+                    items: [{ label: 'Kits' }, { label: 'Shoes' }, { label: 'Shorts' }, { label: 'Training' }]
+                }
+            ],
+            [
+                {
+                    label: 'Running',
+                    items: [{ label: 'Accessories' }, { label: 'Shoes' }, { label: 'T-Shirts' }, { label: 'Shorts' }]
+                }
+            ],
+            [
+                {
+                    label: 'Swimming',
+                    items: [{ label: 'Kickboard' }, { label: 'Nose Clip' }, { label: 'Swimsuits' }, { label: 'Paddles' }]
+                }
+            ],
+            [
+                {
+                    label: 'Tennis',
+                    items: [{ label: 'Balls' }, { label: 'Rackets' }, { label: 'Shoes' }, { label: 'Training' }]
+                }
+            ]
         ]
     }
 ]);

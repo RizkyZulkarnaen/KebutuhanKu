@@ -36,7 +36,3 @@ Kami menyambut kontribusi dari siapa saja. Jika Anda ingin berkontribusi, silaka
    git push origin fitur-baru
    ```
 5. Buat pull request.
-
-## Lisensi
-
-Proyek ini dilisensikan di bawah lisensi [MIT](https://choosealicense.com/licenses/mit/).

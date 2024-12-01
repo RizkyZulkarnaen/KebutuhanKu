@@ -1,10 +1,13 @@
+<script setup>
+useHead({
+  meta:[
+    {name: 'description', content: 'hallo dunia'}
+  ]
+})
+</script>
+
 <template>
   <div>
-    <!-- <NuxtRouteAnnouncer />
-    <NuxtWelcome /> -->
-    <h1>
-      Welcome to the Nuxt.js + Vuetify.js + TypeScript + Jest + E2E Cypress
-      Starter
-    </h1>
+      <NuxtPage/>
   </div>
 </template>

@@ -10,8 +10,11 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/image": "^1.8.1",
     "@nuxt/ui": "^2.19.2",
+    "@nuxtjs/color-mode": "^3.5.2",
     "nuxt": "^3.14.159",
+    "radix-vue": "^1.9.10",
     "vue": "latest",
     "vue-router": "latest"
   },

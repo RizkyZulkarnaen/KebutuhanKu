@@ -6,7 +6,7 @@
         <div label="hero-sections" class="z-0">
             <HeroSections/>
         </div>
-        <div label="top-sell" >
+        <div label="top-sell" class="bg-white py-20" >
 
         </div>
     </div>
